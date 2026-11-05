@@ -37,3 +37,6 @@ Sentry.init({
 if (process.env.NODE_ENV === 'development') {
   Spotlight.init();
 }
+
+// Instrument client-side navigations (Sentry v10 / Next.js 15.3+)
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
